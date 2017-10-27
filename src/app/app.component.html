@@ -1,0 +1,50 @@
+<div class="container jumbotron">
+	<h4 *ngIf="!update" align="center">Add Data</h4>
+	<h4 *ngIf="update" align="center">Update Data</h4>
+	<hr>
+		<form>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-6">
+						<label for="form_user">Name:&nbsp;<span class="mandatory">*</span></label>
+						<input type="text" class="form-control" id="form_user" name="form-user" [(ngModel)]="model.name">
+
+					</div>
+					<div class="col-md-6">
+						<label for="form_position">Position:&nbsp;<span class="mandatory">*</span></label>
+						<input type="text" class="form-control" id="form_position" name="form_position-user" [(ngModel)]="model.position">
+					</div>
+				</div>
+				<div class="row" align="center" style="margin-top: 1rem;">
+					<button type="submit" class="btn" (click)="addRecord()" *ngIf="!update">Add</button>
+					<button type="submit" class="btn" (click)="updateRecord()" *ngIf="update">Update</button>
+				</div>
+			</div>
+		</form>
+	<hr>
+	<div class="row">
+		<div class="col-md-12">
+			<h4 align="center">Read or Update data</h4>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Position</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let empData of employeeRecords; let i = index">
+						<td>{{empData.name}}</td>
+						<td>{{empData.position}}</td>
+						<td>
+							<a class="btn btn-success" (click)="editData(i)">Edit</a>
+							<a class="btn btn-danger" (click)="deleteData(i)">Delete</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

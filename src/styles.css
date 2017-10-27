@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+h1{
+	color: skyblue;
+}
+
+body {
+	background-image: url("https://image.freepik.com/free-psd/white-wood-texture-background-design_1022-75.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.jumbotron {
+	opacity: 0.9;
+	background-color: #bbb;
+}
+
+.mandatory {
+	color: red;
+}
